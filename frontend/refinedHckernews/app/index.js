@@ -10,11 +10,24 @@ import React from 'react';
 import { Text, View, StyleSheet } from 'react-native';
 import { createAppContainer } from 'react-navigation';
 import { createBottomTabNavigator } from 'react-navigation-tabs';
-
-import { Icon, Icons } from './Style';
+import Ionicons from 'react-native-vector-icons/Ionicons';
 
 import HomeScreen from './screens/HomeScreen';
 import SettingsScreen from './screens/SettingsScreen';
+
+class Icon extends React.Component {
+    render() {
+        return (
+            <Ionicons name={this.props.name} size={this.props.size} color={this.props.color} />
+        );
+    }
+}
+
+const Icons = {
+    "Home": "ios-home",
+    "Settings": "ios-settings"
+};
+
 
 const TabNavigator = createBottomTabNavigator({
     Home: HomeScreen,
